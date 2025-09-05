@@ -41,7 +41,7 @@ const upload = multer({
  * POST /api/pdf/merge
  * Merge multiple PDF files into one
  */
-router.post('/merge', upload.array('files', 10), authenticateToken, checkUsageLimit, async (req, res) => {
+router.post('/merge', upload.array('files', 10), authenticateToken(false), checkUsageLimit, async (req, res) => {
     let jobId = null;
     
     try {
@@ -197,7 +197,7 @@ router.post('/merge', upload.array('files', 10), authenticateToken, checkUsageLi
  * POST /api/pdf/split
  * Split PDF into multiple files
  */
-router.post('/split', upload.single('file'), authenticateToken, checkUsageLimit, async (req, res) => {
+router.post('/split', upload.single('file'), authenticateToken(false), checkUsageLimit, async (req, res) => {
     let jobId = null;
     
     try {

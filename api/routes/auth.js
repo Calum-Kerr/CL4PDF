@@ -55,44 +55,60 @@ router.post('/register', [
 
         const { email, password, full_name, platform = 'snackpdf' } = req.body;
 
-        // Check if user already exists
-        const { data: existingUser } = await supabase.auth.admin.getUserByEmail(email);
-        if (existingUser.user) {
+        // Check if user already exists in our users table
+        const { data: existingUser } = await supabase
+            .from('users')
+            .select('id')
+            .eq('email', email)
+            .single();
+
+        if (existingUser) {
             return res.status(409).json({
                 error: 'User already exists with this email'
             });
         }
 
-        // Create user in Supabase Auth
-        const { data: authData, error: authError } = await supabase.auth.admin.createUser({
-            email,
-            password,
-            user_metadata: {
-                full_name,
-                platform
-            },
-            email_confirm: process.env.NODE_ENV === 'production'
-        });
+        // For now, create a simple user record without password storage
+        // In production, you'd want proper password hashing and Supabase Auth
 
-        if (authError) {
-            logger.error('Auth registration error:', authError);
+        // Generate user ID
+        const { v4: uuidv4 } = require('uuid');
+        const userId = uuidv4();
+
+        // Create user directly in our database (simplified for demo)
+        const { data: userData, error: userError } = await supabase
+            .from('users')
+            .insert({
+                id: userId,
+                email,
+                full_name,
+                subscription_tier: 'free',
+                subscription_status: 'active',
+                usage_count: 0,
+                usage_limit: 10
+            })
+            .select()
+            .single();
+
+        if (userError) {
+            logger.error('User creation error:', userError);
             return res.status(400).json({
                 error: 'Failed to create user account',
-                details: authError.message
+                details: userError.message
             });
         }
 
         // Log user activity
-        await logUserActivity(authData.user.id, platform, 'user_registered', 'user', authData.user.id, {
+        await logUserActivity(userData.id, platform, 'user_registered', 'user', userData.id, {
             registration_method: 'email',
             platform
         });
 
         // Generate JWT token for immediate login
         const token = jwt.sign(
-            { 
-                userId: authData.user.id,
-                email: authData.user.email,
+            {
+                userId: userData.id,
+                email: userData.email,
                 platform
             },
             process.env.JWT_SECRET,
@@ -102,13 +118,13 @@ router.post('/register', [
         res.status(201).json({
             message: 'User registered successfully',
             user: {
-                id: authData.user.id,
-                email: authData.user.email,
-                full_name,
+                id: userData.id,
+                email: userData.email,
+                full_name: userData.full_name,
                 platform
             },
             token,
-            requires_verification: process.env.NODE_ENV === 'production'
+            requires_verification: false // Simplified for demo
         });
 
     } catch (error) {
