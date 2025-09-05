@@ -2,6 +2,37 @@
    SnackPDF Custom Styles
    ===================================================== */
 
+/* Bootstrap Icons Fix */
+.bi::before {
+    font-family: "bootstrap-icons" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    line-height: 1 !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+}
+
+.bi {
+    display: inline-block !important;
+    font-family: "bootstrap-icons" !important;
+}
+
+/* Bootstrap Icons Content */
+.bi-files::before { content: "\f2e6"; }
+.bi-scissors::before { content: "\f4e6"; }
+.bi-archive::before { content: "\f1c6"; }
+.bi-file-word::before { content: "\f2e8"; }
+.bi-file-pdf::before { content: "\f2e7"; }
+.bi-pencil-square::before { content: "\f4c9"; }
+.bi-pen::before { content: "\f4c8"; }
+.bi-lock::before { content: "\f3f5"; }
+.bi-shield-check::before { content: "\f52a"; }
+.bi-lightning::before { content: "\f3f8"; }
+.bi-device-desktop::before { content: "\f26c"; }
+.bi-linkedin::before { content: "\f472"; }
+
 /* Brand Colors */
 :root {
     --primary-brand: #238287;
