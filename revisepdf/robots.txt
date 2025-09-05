@@ -1,0 +1,67 @@
+User-agent: *
+Allow: /
+
+# High-priority pages for crawling
+Allow: /editor
+Allow: /features
+Allow: /form-filler
+Allow: /esignature
+Allow: /templates
+Allow: /templates/business
+Allow: /templates/legal
+Allow: /templates/education
+Allow: /healthcare
+Allow: /education
+Allow: /legal
+Allow: /pricing
+Allow: /demo
+
+# Disallow private/admin areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /uploads/
+Disallow: /logs/
+
+# Disallow duplicate content
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
+Disallow: /*?campaign=*
+
+# Allow CSS, JS, and images for proper rendering
+Allow: /assets/
+Allow: *.css
+Allow: *.js
+Allow: *.png
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.gif
+Allow: *.svg
+Allow: *.webp
+Allow: *.ico
+
+# Sitemap location
+Sitemap: https://revisepdf-frontend-c4aefb4be369.herokuapp.com/sitemap.xml
+
+# Crawl delay (be respectful)
+Crawl-delay: 1
+
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /

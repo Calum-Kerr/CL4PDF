@@ -1,19 +1,54 @@
 /**
- * SnackPDF Analytics
- * Simple analytics and user tracking
+ * Comprehensive Analytics and Tracking System
+ * Google Analytics 4, Search Console, and Custom Event Tracking
  */
 
-class Analytics {
+class AnalyticsManager {
     constructor() {
+        this.gaId = 'G-XXXXXXXXXX'; // Replace with actual GA4 ID
+        this.gscId = 'XXXXXXXXXX'; // Replace with actual Search Console ID
         this.sessionId = this.generateSessionId();
         this.userId = localStorage.getItem('user_id') || null;
         this.events = [];
+        this.init();
     }
-    
+
     generateSessionId() {
         return 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
     }
-    
+
+    init() {
+        this.loadGoogleAnalytics();
+        this.setupCustomEvents();
+        this.trackUserBehavior();
+        this.setupConversionTracking();
+    }
+
+    // Load Google Analytics 4
+    loadGoogleAnalytics() {
+        // Load gtag script
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${this.gaId}`;
+        document.head.appendChild(script);
+
+        // Initialize gtag
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', this.gaId, {
+            page_title: document.title,
+            page_location: window.location.href,
+            custom_map: {
+                'custom_parameter_1': 'pdf_tool_used',
+                'custom_parameter_2': 'user_plan_type'
+            }
+        });
+
+        // Make gtag globally available
+        window.gtag = gtag;
+    }
+
     track(event, properties = {}) {
         const eventData = {
             event,
@@ -82,11 +117,24 @@ class Analytics {
 }
 
 // Initialize analytics
-window.analytics = new Analytics();
+window.analytics = new AnalyticsManager();
 
 // Track page view on load
 document.addEventListener('DOMContentLoaded', () => {
     window.analytics.pageView();
 });
 
-console.log('SnackPDF analytics initialized');
+// Export enhanced tracking functions
+window.trackEvent = (eventName, parameters) => {
+    if (window.analytics) {
+        window.analytics.trackEvent(eventName, parameters);
+    }
+};
+
+window.trackConversion = (conversionName, parameters) => {
+    if (window.analytics) {
+        window.analytics.trackConversion(conversionName, parameters);
+    }
+};
+
+console.log('SnackPDF comprehensive analytics initialized');
