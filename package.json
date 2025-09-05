@@ -1,0 +1,57 @@
+{
+  "name": "cl4pdf",
+  "version": "1.0.0",
+  "description": "PDF Tools Platform - SnackPDF & RevisePDF",
+  "main": "api/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:snackpdf\" \"npm run dev:revisepdf\"",
+    "dev:api": "cd api && npm run dev",
+    "dev:snackpdf": "cd snackpdf && python -m http.server 3000",
+    "dev:revisepdf": "cd revisepdf && python -m http.server 3001",
+    "start": "cd api && npm start",
+    "build": "npm run build:api",
+    "build:api": "cd api && npm run build",
+    "test": "npm run test:api",
+    "test:api": "cd api && npm test",
+    "lint": "eslint . --ext .js,.json",
+    "lint:fix": "eslint . --ext .js,.json --fix",
+    "deploy": "npm run build && npm run deploy:heroku",
+    "deploy:heroku": "git push heroku main",
+    "db:migrate": "cd supabase && supabase db push",
+    "db:reset": "cd supabase && supabase db reset",
+    "db:seed": "cd api && npm run db:seed"
+  },
+  "keywords": [
+    "pdf",
+    "pdf-tools",
+    "pdf-editor",
+    "pdf-converter",
+    "document-processing",
+    "snackpdf",
+    "revisepdf"
+  ],
+  "author": "CL4PDF Team",
+  "license": "PROPRIETARY",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Calum-Kerr/CL4PDF.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.55.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.4.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "nodemon": "^3.0.2",
+    "prettier": "^3.1.1"
+  },
+  "workspaces": [
+    "api",
+    "core"
+  ]
+}

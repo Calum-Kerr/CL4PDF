@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to Word | SnackPDF - Convert PDF to DOC & DOCX Online</title>
+    <meta name="description" content="Convert PDF to Word documents online for free. Transform PDF files into editable DOC and DOCX formats with perfect formatting preservation.">
+    <meta name="keywords" content="PDF to Word, PDF to DOC, PDF to DOCX, convert PDF, PDF converter">
+    <meta name="author" content="SnackPDF">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://snackpdf.com/pdf-to-word">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="PDF to Word | SnackPDF - Convert PDF to DOC & DOCX Online">
+    <meta property="og:description" content="Convert PDF to Word documents online for free. Transform PDF files into editable DOC and DOCX formats.">
+    <meta property="og:image" content="https://snackpdf.com/assets/images/og-pdf-to-word.jpg">
+    <meta property="og:url" content="https://snackpdf.com/pdf-to-word">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PDF to Word | SnackPDF">
+    <meta name="twitter:description" content="Convert PDF to Word documents online for free.">
+    <meta name="twitter:image" content="https://snackpdf.com/assets/images/twitter-pdf-to-word.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/tool.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="/">
+                    <img src="/assets/images/logo.svg" alt="SnackPDF" height="40">
+                </a>
+                
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Navigation -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                All PDF Tools
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><h6 class="dropdown-header">Organize PDF</h6></li>
+                                <li><a class="dropdown-item" href="/merge-pdf">Merge PDF</a></li>
+                                <li><a class="dropdown-item" href="/split-pdf">Split PDF</a></li>
+                                <li><a class="dropdown-item" href="/compress-pdf">Compress PDF</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><h6 class="dropdown-header">Convert PDF</h6></li>
+                                <li><a class="dropdown-item" href="/pdf-to-word">PDF to Word</a></li>
+                                <li><a class="dropdown-item" href="/word-to-pdf">Word to PDF</a></li>
+                                <li><a class="dropdown-item" href="/pdf-to-jpg">PDF to JPG</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pricing">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/features">Features</a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Auth Buttons -->
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/login">Login</a>
+                        <a class="btn btn-primary ms-2" href="/signup">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section py-5 bg-light">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <div class="hero-icon mb-4">
+                            <i class="bi bi-file-word text-primary" style="font-size: 4rem;"></i>
+                        </div>
+                        <h1 class="display-4 fw-bold mb-3">PDF to Word</h1>
+                        <p class="lead mb-4">Easily convert your PDF files into editable DOC and DOCX documents. Perfect formatting preservation with advanced OCR technology.</p>
+                        <div class="hero-features d-flex justify-content-center flex-wrap gap-4 mb-4">
+                            <div class="feature-item">
+                                <i class="bi bi-eye text-success me-2"></i>
+                                <span>Perfect Formatting</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-type text-warning me-2"></i>
+                                <span>OCR Technology</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-pencil text-info me-2"></i>
+                                <span>Fully Editable</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tool Section -->
+        <section class="tool-section py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <!-- Upload Area -->
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-content text-center">
+                                <i class="bi bi-cloud-upload upload-icon"></i>
+                                <h3 class="upload-title">Select PDF files</h3>
+                                <p class="upload-subtitle">Click to upload or drag and drop your PDF files here</p>
+                                <button class="btn btn-primary btn-lg" id="selectFilesBtn">
+                                    <i class="bi bi-file-earmark-pdf me-2"></i>
+                                    Select PDF Files
+                                </button>
+                                <input type="file" id="fileInput" accept=".pdf" multiple style="display: none;">
+                                <div class="upload-info mt-3">
+                                    <small class="text-muted">Maximum file size: 50MB per file</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conversion Options -->
+                        <div class="conversion-options mt-4" id="conversionOptions" style="display: none;">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="mb-0">Conversion Settings</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Output Format</label>
+                                            <select class="form-select" id="outputFormat">
+                                                <option value="docx" selected>Word Document (.docx)</option>
+                                                <option value="doc">Word 97-2003 (.doc)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">OCR Language</label>
+                                            <select class="form-select" id="ocrLanguage">
+                                                <option value="auto" selected>Auto-detect</option>
+                                                <option value="en">English</option>
+                                                <option value="es">Spanish</option>
+                                                <option value="fr">French</option>
+                                                <option value="de">German</option>
+                                                <option value="it">Italian</option>
+                                                <option value="pt">Portuguese</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="preserveLayout" checked>
+                                                <label class="form-check-label" for="preserveLayout">
+                                                    Preserve original layout and formatting
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="enableOCR" checked>
+                                                <label class="form-check-label" for="enableOCR">
+                                                    Enable OCR for scanned documents
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- File List -->
+                        <div class="file-list mt-4" id="fileList" style="display: none;">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">Files to Convert</h5>
+                                    <button class="btn btn-primary" id="convertBtn">
+                                        <i class="bi bi-arrow-right-circle me-2"></i>
+                                        Convert to Word
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    <div id="fileItems"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Processing -->
+                        <div class="processing-section mt-4" id="processingSection" style="display: none;">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <div class="spinner-border text-primary mb-3" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                    <h5>Converting your PDFs to Word...</h5>
+                                    <p class="text-muted">Please wait while we process your files</p>
+                                    <div class="progress">
+                                        <div class="progress-bar" id="progressBar" role="progressbar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Results -->
+                        <div class="results-section mt-4" id="resultsSection" style="display: none;">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">Conversion Complete</h5>
+                                    <button class="btn btn-success" id="downloadAllBtn">
+                                        <i class="bi bi-download me-2"></i>
+                                        Download All
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    <div id="resultItems"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="display-5 fw-bold">How PDF to Word Conversion Works</h2>
+                        <p class="lead">Our advanced technology ensures perfect conversion results</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <div class="step-card text-center">
+                            <div class="step-number">1</div>
+                            <h4>Upload PDF</h4>
+                            <p>Select your PDF files from your device or drag and drop them into the upload area.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="step-card text-center">
+                            <div class="step-number">2</div>
+                            <h4>AI Processing</h4>
+                            <p>Our AI analyzes your PDF structure, text, images, and formatting to ensure perfect conversion.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="step-card text-center">
+                            <div class="step-number">3</div>
+                            <h4>Download Word</h4>
+                            <p>Get your fully editable Word document with preserved formatting and layout.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <h5>SnackPDF</h5>
+                    <p>Your complete PDF toolkit. Free, fast, and secure.</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6>Tools</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="/merge-pdf" class="text-light">Merge PDF</a></li>
+                        <li><a href="/split-pdf" class="text-light">Split PDF</a></li>
+                        <li><a href="/compress-pdf" class="text-light">Compress PDF</a></li>
+                        <li><a href="/convert-pdf" class="text-light">Convert PDF</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6>Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="/about" class="text-light">About Us</a></li>
+                        <li><a href="/privacy" class="text-light">Privacy Policy</a></li>
+                        <li><a href="/terms" class="text-light">Terms of Service</a></li>
+                        <li><a href="/contact" class="text-light">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="/help" class="text-light">Help Center</a></li>
+                        <li><a href="/faq" class="text-light">FAQ</a></li>
+                        <li><a href="/blog" class="text-light">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 SnackPDF. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="/assets/js/pdf-to-word.js"></script>
+</body>
+</html>

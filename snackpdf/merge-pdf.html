@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Merge PDF Files Online - Combine PDFs for Free | SnackPDF</title>
+    <meta name="description" content="Merge PDF files online for free. Combine multiple PDFs into one document in seconds. No registration required. Fast, secure, and easy to use.">
+    <meta name="keywords" content="merge PDF, combine PDF, join PDF files, PDF merger, online PDF tools">
+    <meta name="author" content="SnackPDF">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://snackpdf.com/merge-pdf">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Merge PDF Files Online - Combine PDFs for Free">
+    <meta property="og:description" content="Merge PDF files online for free. Combine multiple PDFs into one document in seconds.">
+    <meta property="og:image" content="https://snackpdf.com/assets/images/tools/merge-pdf-og.jpg">
+    <meta property="og:url" content="https://snackpdf.com/merge-pdf">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/tools.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "SnackPDF Merge PDF",
+        "description": "Free online tool to merge PDF files",
+        "url": "https://snackpdf.com/merge-pdf",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="/assets/images/logo.svg" alt="SnackPDF" height="40">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">All Tools</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pricing">Pricing</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/login">Login</a>
+                        <a class="btn btn-primary ms-2" href="/signup">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Tool Header -->
+        <section class="tool-header py-4 mt-5 bg-light">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="tool-icon me-3">
+                                <i class="bi bi-files text-primary" style="font-size: 2.5rem;"></i>
+                            </div>
+                            <div>
+                                <h1 class="h2 mb-1">Merge PDF</h1>
+                                <p class="text-muted mb-0">Combine PDFs in the order you want with the easiest PDF merger available</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <div class="tool-stats">
+                            <small class="text-muted">
+                                <i class="bi bi-people me-1"></i>
+                                Used by 2M+ people this month
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- File Upload Section -->
+        <section class="upload-section py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <!-- Upload Area -->
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-content text-center">
+                                <i class="bi bi-cloud-upload upload-icon"></i>
+                                <h3 class="upload-title">Select PDF files</h3>
+                                <p class="upload-description">Click to select files or drag and drop them here</p>
+                                <button class="btn btn-primary btn-lg" id="selectFilesBtn">
+                                    <i class="bi bi-file-earmark-plus me-2"></i>
+                                    Select PDF files
+                                </button>
+                                <input type="file" id="fileInput" multiple accept=".pdf" style="display: none;">
+                                <div class="upload-info mt-3">
+                                    <small class="text-muted">
+                                        <i class="bi bi-shield-check me-1"></i>
+                                        Files are processed securely and deleted after 1 hour
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- File List -->
+                        <div class="file-list mt-4" id="fileList" style="display: none;">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>Selected Files</h4>
+                                <button class="btn btn-outline-secondary btn-sm" id="addMoreFiles">
+                                    <i class="bi bi-plus-circle me-1"></i>
+                                    Add More Files
+                                </button>
+                            </div>
+                            <div class="files-container" id="filesContainer">
+                                <!-- Files will be added here dynamically -->
+                            </div>
+                            
+                            <!-- Merge Options -->
+                            <div class="merge-options mt-4">
+                                <h5>Merge Options</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="mergeMode" id="mergeAll" value="all" checked>
+                                            <label class="form-check-label" for="mergeAll">
+                                                Merge all pages
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="mergeMode" id="mergeCustom" value="custom">
+                                            <label class="form-check-label" for="mergeCustom">
+                                                Custom page ranges
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="addBookmarks">
+                                            <label class="form-check-label" for="addBookmarks">
+                                                Add bookmarks for each file
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="action-buttons mt-4 text-center">
+                                <button class="btn btn-primary btn-lg me-3" id="mergeBtn">
+                                    <i class="bi bi-arrow-down-circle me-2"></i>
+                                    Merge PDF
+                                </button>
+                                <button class="btn btn-outline-secondary" id="clearAllBtn">
+                                    <i class="bi bi-trash me-2"></i>
+                                    Clear All
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Processing -->
+                        <div class="processing-section mt-4" id="processingSection" style="display: none;">
+                            <div class="text-center">
+                                <div class="spinner-border text-primary mb-3" role="status">
+                                    <span class="visually-hidden">Processing...</span>
+                                </div>
+                                <h4>Merging your PDFs...</h4>
+                                <p class="text-muted">This may take a few moments</p>
+                                <div class="progress mt-3">
+                                    <div class="progress-bar" role="progressbar" style="width: 0%" id="progressBar"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Results -->
+                        <div class="results-section mt-4" id="resultsSection" style="display: none;">
+                            <div class="alert alert-success">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-check-circle-fill me-3" style="font-size: 2rem;"></i>
+                                    <div class="flex-grow-1">
+                                        <h4 class="alert-heading mb-1">PDF merged successfully!</h4>
+                                        <p class="mb-0">Your merged PDF is ready for download</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="result-file">
+                                <div class="d-flex align-items-center justify-content-between p-3 border rounded">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-file-earmark-pdf text-danger me-3" style="font-size: 2rem;"></i>
+                                        <div>
+                                            <h6 class="mb-1" id="resultFileName">merged-document.pdf</h6>
+                                            <small class="text-muted" id="resultFileSize">2.4 MB</small>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" id="downloadBtn">
+                                        <i class="bi bi-download me-2"></i>
+                                        Download
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <button class="btn btn-outline-primary me-3" id="mergeAnotherBtn">
+                                    <i class="bi bi-arrow-repeat me-2"></i>
+                                    Merge Another PDF
+                                </button>
+                                <a href="/" class="btn btn-outline-secondary">
+                                    <i class="bi bi-house me-2"></i>
+                                    Back to Tools
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2>Why choose our PDF merger?</h2>
+                    <p class="lead">Fast, secure, and easy to use</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4 text-center mb-4">
+                        <i class="bi bi-lightning-charge text-primary mb-3" style="font-size: 3rem;"></i>
+                        <h4>Lightning Fast</h4>
+                        <p>Merge PDFs in seconds with our optimized processing engine</p>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <i class="bi bi-shield-check text-primary mb-3" style="font-size: 3rem;"></i>
+                        <h4>100% Secure</h4>
+                        <p>Your files are encrypted and automatically deleted after processing</p>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <i class="bi bi-device-desktop text-primary mb-3" style="font-size: 3rem;"></i>
+                        <h4>Works Everywhere</h4>
+                        <p>Use on any device with a web browser. No software installation needed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2>How to merge PDF files</h2>
+                    <p class="lead">Simple 3-step process</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="step-number">1</div>
+                        <h4>Select Files</h4>
+                        <p>Choose the PDF files you want to merge from your device</p>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="step-number">2</div>
+                        <h4>Arrange Order</h4>
+                        <p>Drag and drop to arrange files in your preferred order</p>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="step-number">3</div>
+                        <h4>Download</h4>
+                        <p>Click merge and download your combined PDF file</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <h5>SnackPDF</h5>
+                    <p>Your complete PDF toolkit. Free, fast, and secure.</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6>Popular Tools</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="/merge-pdf" class="text-light">Merge PDF</a></li>
+                        <li><a href="/split-pdf" class="text-light">Split PDF</a></li>
+                        <li><a href="/compress-pdf" class="text-light">Compress PDF</a></li>
+                        <li><a href="/pdf-to-word" class="text-light">PDF to Word</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6>Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="/about" class="text-light">About Us</a></li>
+                        <li><a href="/privacy" class="text-light">Privacy Policy</a></li>
+                        <li><a href="/terms" class="text-light">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="/help" class="text-light">Help Center</a></li>
+                        <li><a href="/contact" class="text-light">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 SnackPDF. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/merge-pdf.js"></script>
+</body>
+</html>

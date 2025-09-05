@@ -1,0 +1,335 @@
+/* =====================================================
+   SnackPDF Custom Styles
+   ===================================================== */
+
+/* Brand Colors */
+:root {
+    --primary-brand: #238287;
+    --primary-dark: #1a5f63;
+    --primary-light: #e2f8f5;
+    --primary-50: #f0fdfa;
+    --primary-100: #ccfbf1;
+    --primary-200: #99f6e4;
+    --primary-300: #5eead4;
+    --primary-400: #2dd4bf;
+    --primary-500: #238287;
+    --primary-600: #0d9488;
+    --primary-700: #0f766e;
+    --primary-800: #115e59;
+    --primary-900: #134e4a;
+    
+    --text-primary: #333;
+    --text-secondary: #666;
+    --text-light: #4a5568;
+    --bg-light: #f8fafc;
+    --border-color: #e5e7eb;
+}
+
+/* Override Bootstrap primary color */
+.btn-primary {
+    background-color: var(--primary-brand);
+    border-color: var(--primary-brand);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-outline-primary {
+    color: var(--primary-brand);
+    border-color: var(--primary-brand);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-brand);
+    border-color: var(--primary-brand);
+}
+
+.text-primary {
+    color: var(--primary-brand) !important;
+}
+
+/* Global Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-primary);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-brand);
+}
+
+/* Main Content */
+.main-content {
+    padding-top: 80px; /* Account for fixed header */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-100) 100%);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.hero h1 {
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.hero .lead {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Tools Section */
+.tools-section {
+    background: white;
+}
+
+.tool-filters {
+    text-align: center;
+}
+
+.tool-filters .btn-group .btn {
+    border-radius: 25px;
+    margin: 0 0.25rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tool-filters .btn.active {
+    background-color: var(--primary-brand);
+    border-color: var(--primary-brand);
+    color: white;
+}
+
+/* Tool Cards */
+.tool-card {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(35, 130, 135, 0.15);
+    border-color: var(--primary-brand);
+}
+
+.tool-card .card-body {
+    padding: 2rem 1.5rem;
+}
+
+.tool-icon {
+    margin-bottom: 1rem;
+}
+
+.tool-card .card-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.tool-card .card-text {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.tool-card .btn {
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+}
+
+/* Features Section */
+.features-section {
+    background: var(--bg-light);
+}
+
+.features-section h4 {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.features-section p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* Footer */
+.footer {
+    background: #2d3748 !important;
+    color: white;
+}
+
+.footer h5, .footer h6 {
+    color: white;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.footer .list-unstyled li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero .lead {
+        font-size: 1.1rem;
+    }
+    
+    .tool-card .card-body {
+        padding: 1.5rem 1rem;
+    }
+    
+    .tool-filters .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .tool-filters .btn {
+        margin: 0.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        min-height: 300px;
+        padding: 2rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+    
+    .hero .lead {
+        font-size: 1rem;
+    }
+    
+    .main-content {
+        padding-top: 70px;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Utility Classes */
+.text-brand {
+    color: var(--primary-brand) !important;
+}
+
+.bg-brand {
+    background-color: var(--primary-brand) !important;
+}
+
+.border-brand {
+    border-color: var(--primary-brand) !important;
+}
+
+.shadow-brand {
+    box-shadow: 0 4px 6px rgba(35, 130, 135, 0.1) !important;
+}
+
+/* Focus States for Accessibility */
+.btn:focus,
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-brand);
+    box-shadow: 0 0 0 0.2rem rgba(35, 130, 135, 0.25);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-brand);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
