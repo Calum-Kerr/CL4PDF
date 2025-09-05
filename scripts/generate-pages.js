@@ -353,9 +353,9 @@ const getFooter = (site) => {
                     <p class="mb-0">&copy; 2025 ${siteConfig[site]}. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
-                    <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/calum-x-kerr" class="text-light" target="_blank" rel="noopener noreferrer">
+                        <i class="bi bi-linkedin"></i> Connect on LinkedIn
+                    </a>
                 </div>
             </div>
         </div>

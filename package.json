@@ -53,5 +53,8 @@
   "workspaces": [
     "api",
     "core"
-  ]
+  ],
+  "dependencies": {
+    "glob": "^11.0.3"
+  }
 }
