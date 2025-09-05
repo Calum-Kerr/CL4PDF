@@ -4,7 +4,7 @@
  */
 
 window.CL4PDF_CONFIG = {
-    API_URL: 'https://cl4pdf-api-5ad2fef3254f.herokuapp.com',
+    API_URL: 'http://localhost:3002',
     SITE_NAME: 'RevisePDF',
     DOMAIN: 'revisepdf.com',
     

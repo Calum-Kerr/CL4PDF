@@ -507,4 +507,20 @@ async function logActivity(userId, platform, action, resourceType, resourceId, d
     }
 }
 
+/**
+ * GET /api/pdf/status
+ * Simple status check for PDF routes
+ */
+router.get('/status', (req, res) => {
+    res.json({
+        status: 'PDF routes active',
+        available_endpoints: [
+            'POST /api/pdf/merge',
+            'POST /api/pdf/split',
+            'GET /api/pdf/jobs/:jobId'
+        ],
+        timestamp: new Date().toISOString()
+    });
+});
+
 module.exports = router;
